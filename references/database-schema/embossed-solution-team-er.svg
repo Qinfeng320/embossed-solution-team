@@ -1,0 +1,235 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 1180" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1160" height="1180" fill="#f8fafc"/>
+
+  <text x="30" y="34" font-size="20" font-weight="bold" fill="#0f172a">embossed-solution-team — 数据库 ER 关系图</text>
+  <text x="30" y="54" font-size="12" fill="#64748b">规范化数据 → 分类 → 多智能体处理 → 归档 → 生成保存 → 文件命名</text>
+
+  <!-- ===================== RELATIONSHIP LINES ===================== -->
+  <g fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)">
+    <line x1="155" y1="200" x2="155" y2="250"/>
+    <polyline points="155,200 290,200 290,500 155,500"/>
+    <polyline points="155,200 290,200 290,880 435,880"/>
+    <line x1="560" y1="140" x2="590" y2="140"/>
+    <polyline points="715,200 570,200 570,250 995,250"/>
+    <line x1="715" y1="200" x2="715" y2="250"/>
+    <polyline points="715,200 570,200 570,500 435,500"/>
+  </g>
+  <g fill="none" stroke="#0d9488" stroke-width="1.5" marker-end="url(#arrow)">
+    <line x1="280" y1="310" x2="310" y2="310"/>
+    <line x1="560" y1="310" x2="870" y2="310"/>
+    <line x1="840" y1="310" x2="870" y2="310"/>
+  </g>
+  <g fill="none" stroke="#6d28d9" stroke-width="1.5" marker-end="url(#arrow)">
+    <line x1="280" y1="500" x2="310" y2="500"/>
+    <line x1="280" y1="490" x2="870" y2="490"/>
+    <line x1="560" y1="515" x2="870" y2="515"/>
+    <line x1="560" y1="500" x2="590" y2="500"/>
+    <polyline points="155,560 290,560 290,880 435,880"/>
+  </g>
+  <g fill="none" stroke="#b45309" stroke-width="1.5" marker-end="url(#arrow)">
+    <line x1="560" y1="690" x2="590" y2="690"/>
+    <line x1="560" y1="690" x2="870" y2="690"/>
+    <polyline points="435,560 435,600 715,600 715,630" stroke-dasharray="6,4"/>
+  </g>
+  <g fill="none" stroke="#15803d" stroke-width="1.5" marker-end="url(#arrow)">
+    <line x1="560" y1="880" x2="590" y2="880"/>
+  </g>
+  <g fill="none" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)">
+    <line x1="435" y1="940" x2="435" y2="1010"/>
+  </g>
+
+  <!-- ===================== DIMENSION ROW ===================== -->
+  <!-- dim_project -->
+  <g>
+    <rect x="30" y="80" width="250" height="120" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <path d="M30,88 a8,8 0 0 1 8,-8 h234 a8,8 0 0 1 8,8 v18 h-250 z" fill="#1f6feb"/>
+    <text x="42" y="99" font-size="13" font-weight="bold" fill="#ffffff">dim_project</text>
+    <text x="42" y="126" font-size="11" font-family="monospace" fill="#0f172a">PK project_id</text>
+    <text x="42" y="144" font-size="11" font-family="monospace" fill="#0f172a">project_code (U)</text>
+    <text x="42" y="162" font-size="11" font-family="monospace" fill="#0f172a">FK owner_agent→dim_agent</text>
+    <text x="42" y="180" font-size="11" font-family="monospace" fill="#0f172a">status</text>
+  </g>
+  <!-- dim_agent -->
+  <g>
+    <rect x="310" y="80" width="250" height="120" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <path d="M310,88 a8,8 0 0 1 8,-8 h234 a8,8 0 0 1 8,8 v18 h-250 z" fill="#1f6feb"/>
+    <text x="322" y="99" font-size="13" font-weight="bold" fill="#ffffff">dim_agent</text>
+    <text x="322" y="126" font-size="11" font-family="monospace" fill="#0f172a">PK agent_code</text>
+    <text x="322" y="144" font-size="11" font-family="monospace" fill="#0f172a">agent_name</text>
+    <text x="322" y="162" font-size="11" font-family="monospace" fill="#0f172a">agent_role (lead/domain)</text>
+    <text x="322" y="180" font-size="11" font-family="monospace" fill="#0f172a">model_binding</text>
+  </g>
+  <!-- dim_category -->
+  <g>
+    <rect x="590" y="80" width="250" height="120" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <path d="M590,88 a8,8 0 0 1 8,-8 h234 a8,8 0 0 1 8,8 v18 h-250 z" fill="#1f6feb"/>
+    <text x="602" y="99" font-size="13" font-weight="bold" fill="#ffffff">dim_category</text>
+    <text x="602" y="126" font-size="11" font-family="monospace" fill="#0f172a">PK category_id</text>
+    <text x="602" y="144" font-size="11" font-family="monospace" fill="#0f172a">FK parent→self</text>
+    <text x="602" y="162" font-size="11" font-family="monospace" fill="#0f172a">FK route_agent_code</text>
+    <text x="602" y="180" font-size="11" font-family="monospace" fill="#0f172a">category_name</text>
+  </g>
+
+  <!-- ===================== CLASSIFICATION ROW ===================== -->
+  <!-- raw_ingest -->
+  <g>
+    <rect x="30" y="250" width="250" height="120" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <path d="M30,258 a8,8 0 0 1 8,-8 h234 a8,8 0 0 1 8,8 v18 h-250 z" fill="#0d9488"/>
+    <text x="42" y="269" font-size="13" font-weight="bold" fill="#ffffff">raw_ingest</text>
+    <text x="42" y="296" font-size="11" font-family="monospace" fill="#0f172a">PK ingest_id</text>
+    <text x="42" y="314" font-size="11" font-family="monospace" fill="#0f172a">FK project_id</text>
+    <text x="42" y="332" font-size="11" font-family="monospace" fill="#0f172a">FK normalized_data_id</text>
+    <text x="42" y="350" font-size="11" font-family="monospace" fill="#0f172a">checksum / status</text>
+  </g>
+  <!-- normalized_data -->
+  <g>
+    <rect x="310" y="250" width="250" height="120" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <path d="M310,258 a8,8 0 0 1 8,-8 h234 a8,8 0 0 1 8,8 v18 h-250 z" fill="#0d9488"/>
+    <text x="322" y="269" font-size="13" font-weight="bold" fill="#ffffff">normalized_data</text>
+    <text x="322" y="296" font-size="11" font-family="monospace" fill="#0f172a">PK data_id</text>
+    <text x="322" y="314" font-size="11" font-family="monospace" fill="#0f172a">FK ingest_id</text>
+    <text x="322" y="332" font-size="11" font-family="monospace" fill="#0f172a">FK project_id</text>
+    <text x="322" y="350" font-size="11" font-family="monospace" fill="#0f172a">normalized_payload(JSONB)</text>
+  </g>
+  <!-- classification_rule -->
+  <g>
+    <rect x="590" y="250" width="250" height="120" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <path d="M590,258 a8,8 0 0 1 8,-8 h234 a8,8 0 0 1 8,8 v18 h-250 z" fill="#0d9488"/>
+    <text x="602" y="269" font-size="13" font-weight="bold" fill="#ffffff">classification_rule</text>
+    <text x="602" y="296" font-size="11" font-family="monospace" fill="#0f172a">PK rule_id</text>
+    <text x="602" y="314" font-size="11" font-family="monospace" fill="#0f172a">FK category_id</text>
+    <text x="602" y="332" font-size="11" font-family="monospace" fill="#0f172a">priority / weight</text>
+    <text x="602" y="350" font-size="11" font-family="monospace" fill="#0f172a">match_dim/op/value</text>
+  </g>
+  <!-- data_classification -->
+  <g>
+    <rect x="870" y="250" width="250" height="120" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <path d="M870,258 a8,8 0 0 1 8,-8 h234 a8,8 0 0 1 8,8 v18 h-250 z" fill="#0d9488"/>
+    <text x="882" y="269" font-size="13" font-weight="bold" fill="#ffffff">data_classification</text>
+    <text x="882" y="296" font-size="11" font-family="monospace" fill="#0f172a">PK classification_id</text>
+    <text x="882" y="314" font-size="11" font-family="monospace" fill="#0f172a">FK data_id</text>
+    <text x="882" y="332" font-size="11" font-family="monospace" fill="#0f172a">FK category_id</text>
+    <text x="882" y="350" font-size="11" font-family="monospace" fill="#0f172a">FK rule_id / is_primary</text>
+  </g>
+
+  <!-- ===================== PROCESS ROW ===================== -->
+  <!-- process_run -->
+  <g>
+    <rect x="30" y="440" width="250" height="120" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <path d="M30,448 a8,8 0 0 1 8,-8 h234 a8,8 0 0 1 8,8 v18 h-250 z" fill="#6d28d9"/>
+    <text x="42" y="459" font-size="13" font-weight="bold" fill="#ffffff">process_run</text>
+    <text x="42" y="486" font-size="11" font-family="monospace" fill="#0f172a">PK run_id</text>
+    <text x="42" y="504" font-size="11" font-family="monospace" fill="#0f172a">FK project_id</text>
+    <text x="42" y="522" font-size="11" font-family="monospace" fill="#0f172a">orchestrator→dim_agent</text>
+    <text x="42" y="540" font-size="11" font-family="monospace" fill="#0f172a">run_code / stage</text>
+  </g>
+  <!-- process_step -->
+  <g>
+    <rect x="310" y="440" width="250" height="120" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <path d="M310,448 a8,8 0 0 1 8,-8 h234 a8,8 0 0 1 8,8 v18 h-250 z" fill="#6d28d9"/>
+    <text x="322" y="459" font-size="13" font-weight="bold" fill="#ffffff">process_step</text>
+    <text x="322" y="486" font-size="11" font-family="monospace" fill="#0f172a">PK step_id</text>
+    <text x="322" y="504" font-size="11" font-family="monospace" fill="#0f172a">FK run_id</text>
+    <text x="322" y="522" font-size="11" font-family="monospace" fill="#0f172a">FK agent_code</text>
+    <text x="322" y="540" font-size="11" font-family="monospace" fill="#0f172a">FK category_id</text>
+  </g>
+  <!-- agent_output -->
+  <g>
+    <rect x="590" y="440" width="250" height="120" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <path d="M590,448 a8,8 0 0 1 8,-8 h234 a8,8 0 0 1 8,8 v18 h-250 z" fill="#6d28d9"/>
+    <text x="602" y="459" font-size="13" font-weight="bold" fill="#ffffff">agent_output</text>
+    <text x="602" y="486" font-size="11" font-family="monospace" fill="#0f172a">PK output_id</text>
+    <text x="602" y="504" font-size="11" font-family="monospace" fill="#0f172a">FK step_id</text>
+    <text x="602" y="522" font-size="11" font-family="monospace" fill="#0f172a">FK agent_code</text>
+    <text x="602" y="540" font-size="11" font-family="monospace" fill="#0f172a">output_type / content</text>
+  </g>
+  <!-- handoff_contract -->
+  <g>
+    <rect x="870" y="440" width="250" height="120" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <path d="M870,448 a8,8 0 0 1 8,-8 h234 a8,8 0 0 1 8,8 v18 h-250 z" fill="#6d28d9"/>
+    <text x="882" y="459" font-size="13" font-weight="bold" fill="#ffffff">handoff_contract</text>
+    <text x="882" y="486" font-size="11" font-family="monospace" fill="#0f172a">PK contract_id</text>
+    <text x="882" y="504" font-size="11" font-family="monospace" fill="#0f172a">FK run_id</text>
+    <text x="882" y="522" font-size="11" font-family="monospace" fill="#0f172a">from/to_step→step</text>
+    <text x="882" y="540" font-size="11" font-family="monospace" fill="#0f172a">contract_type</text>
+  </g>
+
+  <!-- ===================== ARCHIVE ROW ===================== -->
+  <!-- archive_batch -->
+  <g>
+    <rect x="310" y="630" width="250" height="120" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <path d="M310,638 a8,8 0 0 1 8,-8 h234 a8,8 0 0 1 8,8 v18 h-250 z" fill="#b45309"/>
+    <text x="322" y="649" font-size="13" font-weight="bold" fill="#ffffff">archive_batch</text>
+    <text x="322" y="676" font-size="11" font-family="monospace" fill="#0f172a">PK batch_id</text>
+    <text x="322" y="694" font-size="11" font-family="monospace" fill="#0f172a">batch_code</text>
+    <text x="322" y="712" font-size="11" font-family="monospace" fill="#0f172a">trigger (on_complete/</text>
+    <text x="322" y="730" font-size="11" font-family="monospace" fill="#0f172a">scheduled/manual)</text>
+  </g>
+  <!-- process_step_archive -->
+  <g>
+    <rect x="590" y="630" width="250" height="120" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <path d="M590,638 a8,8 0 0 1 8,-8 h234 a8,8 0 0 1 8,8 v18 h-250 z" fill="#b45309"/>
+    <text x="602" y="649" font-size="13" font-weight="bold" fill="#ffffff">process_step_archive</text>
+    <text x="602" y="676" font-size="11" font-family="monospace" fill="#0f172a">PK archive_id</text>
+    <text x="602" y="694" font-size="11" font-family="monospace" fill="#0f172a">FK batch_id</text>
+    <text x="602" y="712" font-size="11" font-family="monospace" fill="#0f172a">orig_step_id</text>
+    <text x="602" y="730" font-size="11" font-family="monospace" fill="#0f172a">payload_snapshot</text>
+  </g>
+  <!-- agent_output_archive -->
+  <g>
+    <rect x="870" y="630" width="250" height="120" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <path d="M870,638 a8,8 0 0 1 8,-8 h234 a8,8 0 0 1 8,8 v18 h-250 z" fill="#b45309"/>
+    <text x="882" y="649" font-size="13" font-weight="bold" fill="#ffffff">agent_output_archive</text>
+    <text x="882" y="676" font-size="11" font-family="monospace" fill="#0f172a">PK archive_id</text>
+    <text x="882" y="694" font-size="11" font-family="monospace" fill="#0f172a">FK batch_id</text>
+    <text x="882" y="712" font-size="11" font-family="monospace" fill="#0f172a">orig_output_id</text>
+    <text x="882" y="730" font-size="11" font-family="monospace" fill="#0f172a">content (JSONB)</text>
+  </g>
+
+  <!-- ===================== GENERATED + FILE ROWS ===================== -->
+  <!-- generated_asset -->
+  <g>
+    <rect x="310" y="820" width="250" height="120" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <path d="M310,828 a8,8 0 0 1 8,-8 h234 a8,8 0 0 1 8,8 v18 h-250 z" fill="#15803d"/>
+    <text x="322" y="839" font-size="13" font-weight="bold" fill="#ffffff">generated_asset</text>
+    <text x="322" y="866" font-size="11" font-family="monospace" fill="#0f172a">PK asset_id</text>
+    <text x="322" y="884" font-size="11" font-family="monospace" fill="#0f172a">FK project_id</text>
+    <text x="322" y="902" font-size="11" font-family="monospace" fill="#0f172a">FK run_id</text>
+    <text x="322" y="920" font-size="11" font-family="monospace" fill="#0f172a">asset_type / version</text>
+  </g>
+  <!-- asset_version -->
+  <g>
+    <rect x="590" y="820" width="250" height="120" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <path d="M590,828 a8,8 0 0 1 8,-8 h234 a8,8 0 0 1 8,8 v18 h-250 z" fill="#15803d"/>
+    <text x="602" y="839" font-size="13" font-weight="bold" fill="#ffffff">asset_version</text>
+    <text x="602" y="866" font-size="11" font-family="monospace" fill="#0f172a">PK version_id</text>
+    <text x="602" y="884" font-size="11" font-family="monospace" fill="#0f172a">FK asset_id</text>
+    <text x="602" y="902" font-size="11" font-family="monospace" fill="#0f172a">version_no (U w/asset)</text>
+    <text x="602" y="920" font-size="11" font-family="monospace" fill="#0f172a">snapshot_ref</text>
+  </g>
+  <!-- file_metadata -->
+  <g>
+    <rect x="310" y="1010" width="250" height="120" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <path d="M310,1018 a8,8 0 0 1 8,-8 h234 a8,8 0 0 1 8,8 v18 h-250 z" fill="#475569"/>
+    <text x="322" y="1029" font-size="13" font-weight="bold" fill="#ffffff">file_metadata</text>
+    <text x="322" y="1056" font-size="11" font-family="monospace" fill="#0f172a">PK file_id</text>
+    <text x="322" y="1074" font-size="11" font-family="monospace" fill="#0f172a">FK asset_id</text>
+    <text x="322" y="1092" font-size="11" font-family="monospace" fill="#0f172a">file_name (命名规范)</text>
+    <text x="322" y="1110" font-size="11" font-family="monospace" fill="#0f172a">storage_path / file_hash</text>
+  </g>
+
+  <!-- ===================== LEGEND ===================== -->
+  <g>
+    <rect x="870" y="80" width="250" height="120" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="882" y="104" font-size="13" font-weight="bold" fill="#0f172a">图例 / Legend</text>
+    <rect x="882" y="116" width="14" height="14" rx="3" fill="#1f6feb"/><text x="904" y="128" font-size="11" fill="#0f172a">维度表 dim_*</text>
+    <rect x="882" y="138" width="14" height="14" rx="3" fill="#0d9488"/><text x="904" y="150" font-size="11" fill="#0f172a">分类子系统</text>
+    <rect x="882" y="160" width="14" height="14" rx="3" fill="#6d28d9"/><text x="904" y="172" font-size="11" fill="#0f172a">过程 + 交接</text>
+    <rect x="882" y="182" width="14" height="14" rx="3" fill="#b45309"/><text x="904" y="194" font-size="11" fill="#0f172a">归档 (虚线=迁移)</text>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+{"ts":1.0,"span_id":"root","parent_span_id":null,"type":"dispatch","member":"doc-in","phase":"P0"}
+{"ts":2.0,"span_id":"s1","parent_span_id":"root","type":"member_return","member":"doc-in","phase":"P0","ok":true}
+{"ts":3.0,"span_id":"root","parent_span_id":null,"type":"dispatch","member":"cus","phase":"P1"}
+{"ts":4.0,"span_id":"s2","parent_span_id":"root","type":"member_return","member":"cus","phase":"P1","ok":false}
+{"ts":5.0,"span_id":"root","parent_span_id":null,"type":"reject","member":"cus","phase":"P1","ok":false,"reason":"干系人权力地图缺失，未标注待澄清清单"}
+{"ts":6.0,"span_id":"root","parent_span_id":null,"type":"dispatch","member":"cus","phase":"P1"}
+{"ts":7.0,"span_id":"s3","parent_span_id":"root","type":"member_return","member":"cus","phase":"P1","ok":true}
+{"ts":8.0,"span_id":"root","parent_span_id":null,"type":"accept","member":"cus","phase":"P1","ok":true}
+{"ts":9.0,"span_id":"root","parent_span_id":null,"type":"verdict","member":"ver","phase":"P4","verdict":"修订后复核"}
+{"ts":10.0,"span_id":"root","parent_span_id":null,"type":"error","member":"ver","phase":"P4","reason":"ver 实例卡住 2 轮无产出，看门狗触发 shutdown"}

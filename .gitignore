@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# 平台运行态文件（本机生成，不随仓库分发）
+settings.json
+
+# 临时与备份
+*.tmp
+*.bak
+*.bak_*
+*.baiduyun.uploading.cfg
+
+# 本地交付产物
+_dist/
+*.zip
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini

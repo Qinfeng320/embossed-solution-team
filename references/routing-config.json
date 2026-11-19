@@ -1,0 +1,115 @@
+{
+  "version": "1.0",
+  "updated": "2026-10-16",
+  "description": "局部复用路由唯一真相源：用户意图 → 调度成员 → 验收标准。团长 MD §6.1.1 仅引用本文件用法；变更后必须跑 route_intent.py --test 回归。",
+  "usage": "python scripts/route_intent.py --hint \"<用户话术摘要>\"（--list 浏览 / --test 回归）",
+  "routes": [
+    {
+      "id": "R-doc-in",
+      "intent": "解析 / 结构化 / 读懂材料（PPT/PDF/Word/图片/网页）",
+      "keywords": ["解析", "结构化", "读懂", "拆解", "提取"],
+      "members": ["doc-in"],
+      "acceptance": "Phase 0 清单（PDF 须过 pdfkit-py）",
+      "notes": ""
+    },
+    {
+      "id": "R-ver",
+      "intent": "核对 / 审查 / 能否外发",
+      "keywords": ["核对", "审查", "核查", "核验", "有没有风险", "风险点", "能外发", "能不能外发", "能否外发"],
+      "members": ["ver"],
+      "acceptance": "Phase 4 清单",
+      "notes": ""
+    },
+    {
+      "id": "R-docx",
+      "intent": "写成 Word / 出文档 / 排版 / 导出 PDF",
+      "keywords": ["写成word", "word文档", "出文档", "排版", "导出pdf", "导pdf", "生成文档"],
+      "members": ["docx"],
+      "acceptance": "Phase 4.5 清单",
+      "notes": ""
+    },
+    {
+      "id": "R-ind",
+      "intent": "行业趋势 / 竞品",
+      "keywords": ["行业", "趋势", "竞品"],
+      "members": ["ind"],
+      "acceptance": "Phase 1·ind",
+      "notes": ""
+    },
+    {
+      "id": "R-pol",
+      "intent": "政策依据 / 必要性",
+      "keywords": ["政策", "必要性"],
+      "members": ["pol"],
+      "acceptance": "Phase 1·pol",
+      "notes": ""
+    },
+    {
+      "id": "R-cus",
+      "intent": "客户画像 / 干系人 / 谁拍板",
+      "keywords": ["客户画像", "干系人", "谁拍板", "决策人"],
+      "members": ["cus"],
+      "acceptance": "Phase 1·cus",
+      "notes": ""
+    },
+    {
+      "id": "R-pro",
+      "intent": "产品怎么配 / 能承诺什么",
+      "keywords": ["产品", "能承诺", "承诺边界"],
+      "members": ["pro"],
+      "acceptance": "Phase 2·pro",
+      "notes": ""
+    },
+    {
+      "id": "R-cas",
+      "intent": "类似案例 / 脱敏",
+      "keywords": ["案例", "脱敏"],
+      "members": ["cas"],
+      "acceptance": "Phase 2·cas",
+      "notes": ""
+    },
+    {
+      "id": "R-dat",
+      "intent": "预算多少 / 测算",
+      "keywords": ["预算", "测算", "报价", "费用"],
+      "members": ["dat"],
+      "acceptance": "Phase 2·dat",
+      "notes": ""
+    },
+    {
+      "id": "R-arc",
+      "intent": "架构怎么搭 / 分期",
+      "keywords": ["架构", "分期", "建设路径"],
+      "members": ["arc"],
+      "acceptance": "Phase 2·arc",
+      "notes": ""
+    },
+    {
+      "id": "R-mat",
+      "intent": "叙事 / 汇报材料 / 口播",
+      "keywords": ["叙事", "汇报材料", "口播", "页面素材", "汇报稿"],
+      "members": ["mat"],
+      "acceptance": "Phase 3 清单",
+      "notes": ""
+    },
+    {
+      "id": "R-md",
+      "intent": "文档 ↔ Markdown 互转（PDF/Word/Excel/PPT 与 MD 双向）",
+      "keywords": ["互转", "markdown", "转md"],
+      "members": ["doc-in", "docx"],
+      "acceptance": "Phase 0 清单（入向）/ Phase 4.5 清单（出向·仅内部速转，外发须走 JSON 管线 + ver 闸）",
+      "notes": "共享 docmd 引擎"
+    }
+  ],
+  "composition_rules": [
+    {
+      "rule": "多意图并存时按依赖顺序拆分多步执行",
+      "example": "\"解析并核对\" = doc-in → ver"
+    },
+    {
+      "rule": "意图模糊且无法归属时，先向用户澄清，不擅自调度",
+      "example": ""
+    }
+  ],
+  "scope_note": "本配置只覆盖单点路由；阶段裁剪（如纯投标 mat → ver → docx）与全 SOP 见团长 MD §6.1.2 / 第四节。"
+}

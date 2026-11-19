@@ -1,0 +1,25 @@
+{
+  "description": "路由回归用例：hint → 期望命中的路由 id 列表（顺序无关；空数组 = 期望未命中，交由语义判断）。",
+  "cases": [
+    { "id": "C01", "hint": "这份PDF帮我解析一下", "expect": ["R-doc-in"] },
+    { "id": "C02", "hint": "把客户给的PPT结构化提取", "expect": ["R-doc-in"] },
+    { "id": "C03", "hint": "核对这份材料的事实来源", "expect": ["R-ver"] },
+    { "id": "C04", "hint": "这份方案有没有风险，能不能外发", "expect": ["R-ver"] },
+    { "id": "C05", "hint": "帮我写成Word文档", "expect": ["R-docx"] },
+    { "id": "C06", "hint": "把内容排版一下导出PDF", "expect": ["R-docx"] },
+    { "id": "C07", "hint": "行业趋势和竞品分析", "expect": ["R-ind"] },
+    { "id": "C08", "hint": "这个方向的政策依据是什么", "expect": ["R-pol"] },
+    { "id": "C09", "hint": "分析一下客户的干系人", "expect": ["R-cus"] },
+    { "id": "C10", "hint": "产品怎么配置，哪些能承诺", "expect": ["R-pro"] },
+    { "id": "C11", "hint": "有没有类似的成功案例", "expect": ["R-cas"] },
+    { "id": "C12", "hint": "大概预算要多少", "expect": ["R-dat"] },
+    { "id": "C13", "hint": "帮我做预算测算", "expect": ["R-dat"] },
+    { "id": "C14", "hint": "架构怎么搭，分几期建设", "expect": ["R-arc"] },
+    { "id": "C15", "hint": "帮我准备汇报材料和口播", "expect": ["R-mat"] },
+    { "id": "C16", "hint": "把markdown转成word", "expect": ["R-md"] },
+    { "id": "C17", "hint": "解析并核对这份材料", "expect": ["R-doc-in", "R-ver"] },
+    { "id": "C18", "hint": "客户画像和预算测算一起看", "expect": ["R-cus", "R-dat"] },
+    { "id": "C19", "hint": "帮我写个致辞", "expect": [] },
+    { "id": "C20", "hint": "审查一下这份投标材料能否外发", "expect": ["R-ver"] }
+  ]
+}

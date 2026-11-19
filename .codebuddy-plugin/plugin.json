@@ -1,0 +1,250 @@
+{
+  "name": "embossed-solution-team",
+  "version": "1.5.0",
+  "description": "Presales expert team for research & writing: an ORCH lead orchestrates 11 domain experts (industry, policy, customer, product, case, data, architecture, material, document-intake, document, verification) to co-produce traceable, deliverable reports, proposals, and materials. For direction-level ambiguities the lead runs a grill protocol (branch-by-branch, one question at a time, recommendation first) with the user before starting work Roles are dispatched to tiered models (flagship/reasoning/fast) per the model-dispatch spec to control cost with quality-first safeguards.",
+  "author": {
+    "name": "Presales Expert Team",
+    "email": "noreply@example.com"
+  },
+  "skills": [
+    "./skills/wechat-article-search"
+  ],
+  "agents": [
+    "./agents/embossed-solution-team-team-lead.md",
+    "./agents/ind-agent.md",
+    "./agents/pol-agent.md",
+    "./agents/cus-agent.md",
+    "./agents/pro-agent.md",
+    "./agents/cas-agent.md",
+    "./agents/dat-agent.md",
+    "./agents/arc-agent.md",
+    "./agents/mat-agent.md",
+    "./agents/doc-in-agent.md",
+    "./agents/docx-agent.md",
+    "./agents/ver-agent.md"
+  ],
+  "expertType": "team",
+  "agentName": "embossed-solution-team-team-lead",
+  "teamInfo": {
+    "leadAgent": "embossed-solution-team-team-lead",
+    "memberAgents": [
+      "ind-agent",
+      "pol-agent",
+      "cus-agent",
+      "pro-agent",
+      "cas-agent",
+      "dat-agent",
+      "arc-agent",
+      "mat-agent",
+      "doc-in-agent",
+      "docx-agent",
+      "ver-agent"
+    ]
+  },
+  "displayName": {
+    "en": "Presales Expert Team",
+    "zh": "售前专家团"
+  },
+  "profession": {
+    "en": "Presales Expert Team",
+    "zh": "售前专家团"
+  },
+  "displayDescription": {
+    "en": "An ORCH lead orchestrates 11 domain experts to deliver traceable, deliverable reports and proposals, opening each task with branch-by-branch grill-style clarification from research to final draft.",
+    "zh": "团长编排 11 位专家产出可追溯的报告与方案，开工前逐支追问澄清需求，按岗位分级派模型控成本。"
+  },
+  "avatar": "avatars/team.png",
+  "categoryId": "12-IndustryConsultant",
+  "defaultInitPrompt": {
+    "zh": "深度调研一个主题并产出结构化报告（先给大纲确认）",
+    "en": "Deep-research a topic and produce a structured report (outline-first)."
+  },
+  "plugin": "embossed-solution-team",
+  "tags": [
+    {
+      "en": "Presales Support",
+      "zh": "售前支撑"
+    },
+    {
+      "en": "Research & Writing",
+      "zh": "研究与写作"
+    },
+    {
+      "en": "Solution Consulting",
+      "zh": "方案咨询"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "en": "Deep-research a topic and produce a structured report (outline-first).",
+      "zh": "深度调研一个主题并产出结构化报告（先给大纲确认）"
+    },
+    {
+      "en": "Build a demand-analysis and necessity argument for a client's solution, with architecture and budget estimation.",
+      "zh": "为某客户的方案做需求解析与必要性论证，并给出架构与预算建议"
+    },
+    {
+      "en": "Verify this material: fact sources, wording compliance, and numeric consistency.",
+      "zh": "核对这份材料的事实来源、文风合规与数字一致性"
+    }
+  ],
+  "members": [
+    {
+      "id": "embossed-solution-team-team-lead",
+      "displayName": {
+        "en": "ORCH Lead",
+        "zh": "团长 ORCH"
+      },
+      "profession": {
+        "en": "Solution Orchestrator",
+        "zh": "方案总编排"
+      },
+      "avatar": "avatars/embossed-solution-team-team-lead.png",
+      "role": "lead"
+    },
+    {
+      "id": "ind-agent",
+      "displayName": {
+        "en": "Industry Intelligence",
+        "zh": "行业情报"
+      },
+      "profession": {
+        "en": "Industry Analyst",
+        "zh": "行业分析师"
+      },
+      "avatar": "avatars/ind-agent.png",
+      "role": "member"
+    },
+    {
+      "id": "pol-agent",
+      "displayName": {
+        "en": "Policy Research",
+        "zh": "政策研究"
+      },
+      "profession": {
+        "en": "Policy Researcher",
+        "zh": "政策研究员"
+      },
+      "avatar": "avatars/pol-agent.png",
+      "role": "member"
+    },
+    {
+      "id": "cus-agent",
+      "displayName": {
+        "en": "Customer Insight",
+        "zh": "客户洞察"
+      },
+      "profession": {
+        "en": "Customer Insight",
+        "zh": "客户洞察师"
+      },
+      "avatar": "avatars/cus-agent.png",
+      "role": "member"
+    },
+    {
+      "id": "pro-agent",
+      "displayName": {
+        "en": "Product & Service",
+        "zh": "产品服务"
+      },
+      "profession": {
+        "en": "Product Specialist",
+        "zh": "产品专家"
+      },
+      "avatar": "avatars/pro-agent.png",
+      "role": "member"
+    },
+    {
+      "id": "cas-agent",
+      "displayName": {
+        "en": "Case Management",
+        "zh": "案例管理"
+      },
+      "profession": {
+        "en": "Case Manager",
+        "zh": "案例经理"
+      },
+      "avatar": "avatars/cas-agent.png",
+      "role": "member"
+    },
+    {
+      "id": "dat-agent",
+      "displayName": {
+        "en": "Data Support",
+        "zh": "数据支持"
+      },
+      "profession": {
+        "en": "Data Analyst",
+        "zh": "数据分析师"
+      },
+      "avatar": "avatars/dat-agent.png",
+      "role": "member"
+    },
+    {
+      "id": "arc-agent",
+      "displayName": {
+        "en": "Solution Architecture",
+        "zh": "方案架构"
+      },
+      "profession": {
+        "en": "Solution Architect",
+        "zh": "方案架构师"
+      },
+      "avatar": "avatars/arc-agent.png",
+      "role": "member"
+    },
+    {
+      "id": "mat-agent",
+      "displayName": {
+        "en": "Material Strategy",
+        "zh": "材料策略"
+      },
+      "profession": {
+        "en": "Material Strategist",
+        "zh": "材料策略师"
+      },
+      "avatar": "avatars/mat-agent.png",
+      "role": "member"
+    },
+    {
+      "id": "doc-in-agent",
+      "displayName": {
+        "en": "Input Document Specialist",
+        "zh": "输入文档规范"
+      },
+      "profession": {
+        "en": "Document Intake Specialist",
+        "zh": "文档输入专员"
+      },
+      "avatar": "avatars/doc-in-agent.png",
+      "role": "member"
+    },
+    {
+      "id": "docx-agent",
+      "displayName": {
+        "en": "Word Document Specialist",
+        "zh": "Word 文档规范"
+      },
+      "profession": {
+        "en": "Document Output Specialist",
+        "zh": "文档输出专员"
+      },
+      "avatar": "avatars/docx-agent.png",
+      "role": "member"
+    },
+    {
+      "id": "ver-agent",
+      "displayName": {
+        "en": "Verification & Risk",
+        "zh": "核验风控"
+      },
+      "profession": {
+        "en": "Verification Auditor",
+        "zh": "核验审计师"
+      },
+      "avatar": "avatars/ver-agent.png",
+      "role": "member"
+    }
+  ],
+  "sharedBy": "售前专家团"
+}
