@@ -591,7 +591,7 @@ Phase 5  团长汇总
 - **governance 引用**：`references/` 自身（redlines/knowledge-index 等）的任何回写须走 `references/governance.md` 的 **PR + 异源互审**协议，锁版本、拒静默更新、可回滚；团长修订红线/知识时显式声明依据并合入版本。
 - **修改后验证五步（PR-005 固化）**：任何交付件的修订轮次须固定执行——① 修改（长规则优先）；② **全域残留扫描**（多关键词、全 XML 口径、含表格单元格；涉及专家包自身文件时并跑 `python scripts/verify_package_coherence.py`）；③ **渲染验证**（`scripts/render_docx.py` 成图核对，关键交付必做）；④ **备份与差异核对**（修改前后留副本，逐处差异确认为预期改动）；⑤ **版本收敛**（临时件清理、单文件终态）。文风/文本类修改一并跑 `check_style_words.py` / `normalize_docx_text.py`。
 - **术语/口径修正同步清单（PR-005 新增）**：用户修正某术语或口径时，须登记修正项（属勘误的同步写入事实修正记录），并对全域执行扫描（交付件 + 底稿 + 关联材料），逐项确认旧表述清零；最终报告同步更新。
-- **包一致性校验（PR-011 新增）**：对专家包自身（agents / references / scripts / plugin.json / hooks / settings.json）的任何修改，合入前必须运行 `python scripts/verify_package_coherence.py` 并修至 ERROR=0；路由配置或脚本调整另须跑 `python scripts/route_intent.py --test` 回归。
+- **包一致性校验（PR-011 新增）**：对专家包自身（agents / references / scripts / plugin.json / settings.json）的任何修改，合入前必须运行 `python scripts/verify_package_coherence.py` 并修至 ERROR=0；路由配置或脚本调整另须跑 `python scripts/route_intent.py --test` 回归。
 
 ### 深挖回灌补充（v1.1·来源 pdf-chapter-deep-mining.md §6 跨章闸门·经 PR-001 异源互审）
 

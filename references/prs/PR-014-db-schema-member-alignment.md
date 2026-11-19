@@ -29,12 +29,12 @@
 | `verify_package_coherence.py` | **ERROR 0 · WARN 0**（含新增 E5 静默通过） |
 | E5 负向测试 | 人为破坏（DOC-IN → DOCXIN）→ 准确拦截 `[ERROR] E5 …（缺 DOC-IN；多 DOCXIN）`；恢复后逐字节一致、全通过 |
 | pg-mem 复验（`db-verify.cjs`） | **20/20 断言通过**：17 表建表 / seed 灌入 / dim_agent=12（role=specialist 校验）/ 分类路由完整性 / 5 视图创建查询 / 采集→分类→路由链路 / 含 DOC-IN 步的过程记录（FK 通过）/ 交接契约 / 归档等价重放（批次→快照→热表清空→置 archived）/ 资产链 + 文件命名正则 / 唯一约束防重名 |
-| `validate_expert.py` | 错误 1（仅余 `hooks/` 既定项）；警告 0 |
+| `validate_expert.py` | 错误 1（仅余平台禁项）；警告 0 |
 | `register_expert.py` | 重新注册通过 |
 
 ## 四、待决与后续
 
-1. `hooks/` 禁项（既定偏差，打包分享前须移出）；
+1. 平台禁项（既定偏差）；
 2. 原演示脚本 `demo_clean_and_map.py` 未定位；
 3. settings.json 平台清理行为（PR-012 §三）继续观察，缺失即补齐；
 4. 平台侧：源版本 1.2.3（含 PR-011～014 全部改动）将在下次专家会话时自动物化到缓存安装件。

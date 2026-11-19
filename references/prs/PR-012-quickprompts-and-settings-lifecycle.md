@@ -27,13 +27,12 @@
 - **时间线佐证**：专家会话「传感器类别学习」（74d7041e）日志显示——10:14:16 与 11:19:24 代理覆盖两次被置为 `embossed-solution-team-team-lead`；删除发生于 11:19:13–18 的会话/专家切换窗口内，与 deactivate 清理路径吻合。
 - **结论与策略**：`settings.json` 属**平台运行态文件**（激活时生成、停用时清理），源目录中手工保留的副本会被平台在停用/切换时清掉；而**包规范（校验器）要求其在位**。采取「保留副本 + 被清理后补齐」策略，`verify_package_coherence.py` E2 检查负责缺失报警。本 PR 已重新补齐（121 文件恢复）。
 - **顺带确认（平台插件安装体系）**：市场插件按版本物化到 `plugins/cache/<marketplace>/<plugin>/<version>/`（含 `.in_use` / `.orphaned_at` 标记与 `installed_plugins.json` 安装记录）；**会话实际加载缓存安装件**；源目录版本号变更后，应用在下次专家使用/更新触发时自动重装新版本——本次已自动完成 1.1.0 → 1.2.0，**1.2.1（含本 PR 新 quickPrompts）将在下次专家会话触发时自动物化**。
-- **hooks 实证状态更新**：此前会话加载的 1.1.0 安装件不含 `hooks/`（hooks 为 10-15 18:11 新增，1.1.0 快照早于它）；1.2.0 安装件首次包含 `hooks/`。故 `subagent-events.jsonl` 至今无记录属预期。真实会话验证顺延至下次专家会话（届时观察该日志是否新增行）。
 
 ## 四、测试记录（2026-10-16）
 
 | 测试 | 结果 |
 |---|---|
-| `validate_expert.py` | 错误 2 → **1**（quickPrompts 已合规；余 `hooks/` 禁项〔既定偏差〕）；警告 1（displayDescription 69 字＝待决项②） |
+| `validate_expert.py` | 错误 2 → **1**（quickPrompts 已合规；余平台禁项〔既定偏差〕）；警告 1（displayDescription 69 字＝待决项②） |
 | `verify_package_coherence.py` | **ERROR 0 · WARN 1**（仅 displayDescription，待决项②） |
 | quickPrompts 结构核验 | 3 条；第 1 条 = `defaultInitPrompt`（首条一致性规则满足） |
 | `register_expert.py` | 重新注册通过（注册信息未变更） |
@@ -42,7 +41,7 @@
 ## 五、待决与后续
 
 1. displayDescription 69 字收敛（待决项②，校验警告）；
-2. `hooks/` 禁项（既定偏差，打包分享前须移出）；
+2. 平台禁项（既定偏差）；
 3. 数据库设计文档「9 域」口径与 11 成员不一致（待专项）；
 4. 原演示脚本 `demo_clean_and_map.py` 未定位（如需要请提供路径）；
 5. 观察 settings.json 是否再次被平台清理（预期：专家停用时会发生），缺失即按 §三 补齐。

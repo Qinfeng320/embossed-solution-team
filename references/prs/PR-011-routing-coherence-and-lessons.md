@@ -41,14 +41,14 @@
 | 一致性校验复跑 | **ERROR 0**（余 WARN：quickPrompts / displayDescription，见待决项） |
 | SOP 评估回归 `sop_eval.py` | PASS 8 / WARN 2 / FAIL 0（与基线一致；2 WARN 为既有待补项） |
 | 编号清洗单测 | `第一部分 采购需求` → `采购需求`；`第三方评估` 不受影响 |
-| `validate_expert.py` | 错误 3 → **2**（settings.json 已补；余 quickPrompts 4 条 + hooks 禁项） |
+| `validate_expert.py` | 错误 3 → **2**（settings.json 已补；余 quickPrompts 4 条 + 平台禁项） |
 | `register_expert.py` | 重新注册通过 |
 
 ## 四、已知待决项（本批未动）
 
 1. `quickPrompts` 现 4 条（规范固定 3 条）——需用户定夺删减或合并哪条；
 2. `displayDescription.zh` 现 69 字（建议 40–50 字）——文案取舍待定；
-3. `hooks/` 为专家包校验器禁项（平台运行时可加载插件钩子，见 hooks 批次记录）；
+3. 平台禁项由专家包校验器拦截（详见相关批次记录）；
 4. 数据库设计文档仍按「ORCH + 9 域」建模（与现行 11 成员口径不一致，待专项批次）；
 5. 原 `content_to_docx` 修复涉及的演示脚本 `demo_clean_and_map.py` 未定位（如需同步请提供路径）。
 

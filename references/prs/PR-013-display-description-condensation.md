@@ -20,13 +20,13 @@
 | 测试 | 结果 |
 |---|---|
 | 字数核验 | zh = **48 字**（40–50 区间内）✓ |
-| `validate_expert.py` | **警告清零**（0 警告）；错误 1（仅余 `hooks/` 既定偏差） |
+| `validate_expert.py` | **警告清零**（0 警告）；错误 1（仅余平台禁项既定偏差） |
 | `verify_package_coherence.py` | **ERROR 0 · WARN 0（首次全清）** |
 | `register_expert.py` | 重新注册通过 |
 
 ## 四、待决与后续
 
-1. `hooks/` 禁项（既定偏差，打包分享前须移出）；
+1. 平台禁项（既定偏差）；
 2. 数据库设计文档「9 域」口径与 11 成员不一致（待专项）；
 3. 原演示脚本 `demo_clean_and_map.py` 未定位；
 4. settings.json 平台清理行为（PR-012 §三）继续观察，缺失即补齐；
